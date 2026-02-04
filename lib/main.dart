@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:test_demo/app/core/service/storage_service.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // 这一行是 App 的“保命符”
+  await SecureStorageService.instance.init();
+  final test = SecureStorageService();
   runApp(
     GetMaterialApp(
       title: "Application",
