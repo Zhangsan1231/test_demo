@@ -10,7 +10,7 @@ Future<void> main() async {
   
   // 这一行是 App 的“保命符”
   await SecureStorageService.instance.init();
-  final test = SecureStorageService();
+  
   runApp(
     GetMaterialApp(
       title: "Application",
